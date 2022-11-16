@@ -1,0 +1,55 @@
+.signup {
+    font-family: 'Roboto', sans-serif;
+    background-image: radial-gradient(rgb(255, 255, 255), rgb(207, 207, 207), rgb(154, 154, 154));
+}
+
+.signup_container {
+    display: flex;
+    width: 100%;
+}
+
+.signup_subcontainer {
+    /* display: flex;
+    flex-direction: column; */
+    /* margin: auto; */
+    height: 50vh;
+    width: 50%;
+    /* border: 1.5px solid grey; */
+    border-radius: 10px;
+}
+
+.signup_title {
+    font-weight: 400;
+    text-decoration: underline orange 4px;
+    text-underline-offset: 10px;
+}
+
+.signup_form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    background-color: rgb(231, 231, 231);
+}
+
+.signup_innerform {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 15px 0;
+}
+
+.signup_label {
+    font-size: larger;
+}
+
+.signup_input {
+    margin: 10px 0 0 0;
+    padding: 6px;
+    font-size: large;
+}
+
+.signup_validation {
+    /* position: absolute; */
+    margin: 5px 0 0 0;
+    font-size: medium;
+}
