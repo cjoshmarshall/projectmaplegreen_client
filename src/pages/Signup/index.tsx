@@ -7,7 +7,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from '../../api/axios'
 import Button from '../../components/Button'
 import Loader from '../../components/Loader'
-import { SET_CREDENTIALS } from '../../redux/authSlice'
 import './index.css'
 
 function Signup() {
@@ -123,6 +122,7 @@ function Signup() {
             console.log(err)
             if (err.data = 'User Already Exists') {
                 setInputError((prev: any) => ({ ...prev, email: `${capitalizeFirstLetter('email')} already exists` }))
+                setIsLoading(false)
             }
         }
     }
