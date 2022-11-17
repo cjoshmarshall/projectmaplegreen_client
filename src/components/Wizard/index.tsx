@@ -119,6 +119,7 @@ function Wizard() {
                     data.append('files', '')
                 }
                 try {
+                    setIsProgessbar(true)
                     const res = await axios.post('/images', data, {
                         headers: {
                             'accept': 'application/json',
@@ -139,8 +140,14 @@ function Wizard() {
                 }
             }
             try {
-                const res = await axios.post("/trees/postTree", tree)
-                setTree(res.data)
+                const res = await axios.post("/trees/postTree", tree, {
+                    onUploadProgress: (data: any) => {
+                        setProgressbar(Math.round((data.loaded / data.total) * 100))
+                    }
+                })
+                setTimeout(() => (dispatch(TOGGLE_WIZARD()), progressbar * 100))
+                setIsProgessbar(false)
+                alert('Tree Uploaded Successfully')
                 socket.emit('importTree', {
                     userId: auth.user?._id
                 })
@@ -182,6 +189,7 @@ function Wizard() {
                 })
                 setTimeout(() => (dispatch(TOGGLE_WIZARD()), progressbar * 100))
                 setIsProgessbar(false)
+                alert('Trees Uploaded Successfully')
             } catch (err) {
                 console.log(err)
             }
