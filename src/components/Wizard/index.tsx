@@ -147,10 +147,10 @@ function Wizard() {
                 })
                 setTimeout(() => (dispatch(TOGGLE_WIZARD()), progressbar * 100))
                 setIsProgessbar(false)
-                alert('Tree Uploaded Successfully')
                 socket.emit('importTree', {
                     userId: auth.user?._id
                 })
+                setTimeout(() => alert('Tree Uploaded Successfully'), 500)
             } catch (err) {
                 console.log(err)
             }
@@ -176,7 +176,7 @@ function Wizard() {
 
     const [wizardPage, setWizardPage]: any = React.useState(false)
     const [isProgressbar, setIsProgessbar]: any = React.useState(false)
-    const [progressbar, setProgressbar]: any = React.useState(false)
+    const [progressbar, setProgressbar]: any = React.useState(0)
 
     const handleBulkUpload = () => {
         const importTree = async () => {
@@ -189,7 +189,7 @@ function Wizard() {
                 })
                 setTimeout(() => (dispatch(TOGGLE_WIZARD()), progressbar * 100))
                 setIsProgessbar(false)
-                alert('Trees Uploaded Successfully')
+                setTimeout(() => alert('Trees Uploaded Successfully'), 500)
             } catch (err) {
                 console.log(err)
             }
