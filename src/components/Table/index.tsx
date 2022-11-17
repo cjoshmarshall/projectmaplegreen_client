@@ -308,7 +308,7 @@ function Table({
     const navigate = useNavigate();
 
     const handleRowClick = (row: number) => {
-        if (tablename === 'users') return navigate(`/trees/${row + 1}`);
+        if (tablename === 'users') return navigate(`/trees/${row + 2}`);
     }
     const handleClickPrevent: any = document.getElementById('checkbox')?.addEventListener('click', (e) => {
     });
