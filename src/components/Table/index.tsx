@@ -384,7 +384,7 @@ function Table({
                                         }
                                     })
                                     .map((item: any, index: any) =>
-                                        <tr key={index} className={`border-t ${item.isChecked ? 'bg-gray-100 transition-colors' : 'bg-white'} hover:bg-lightgreen transition-colors cursor-pointer`} onClick={() => handleRowClick(index)}>
+                                        <tr key={index} className={`border-t ${item.isChecked ? 'bg-gray-100 transition-colors' : 'bg-white'} ${tablename === 'users' && 'hover:bg-lightgreen cursor-pointer'} transition-colors`} onClick={() => handleRowClick(index)}>
                                             {!isCheckboxHidden &&
                                                 <td className='sticky left-0 z-20 border-t px-4 py-2 bg-white transition-colors'>
                                                     <input id='checkbox' name={item._id} type='checkbox'
