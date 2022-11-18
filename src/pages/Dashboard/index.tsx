@@ -35,14 +35,12 @@ function Dashboard() {
         socket.current.emit('addUser', auth.user._id, auth.user.admin)
         socket.current.on('getUsers', (users: any) => {
             users = users.filter((user: any) => user.userId !== null)
-            // console.log(users)
         })
     }, [auth])
 
     React.useEffect(() => {
         socket.current.on('getNotification', (data: any) => {
             dispatch(SET_CREDENTIALS({ userId: data.userId }))
-            // console.log(notification, 'notification')
         })
     }, [])
 
@@ -95,7 +93,7 @@ function Dashboard() {
                 <div className='grid grid-flow-col grid-cols-3'>
                     <Card title={users.users.length} subtitle='Users' icon={<FontAwesomeIcon icon={faCircleUser} />} className='mx-4 bg-white rounded shadow-lg' />
                     <Card title={trees.trees.length} subtitle='Trees' icon={<FontAwesomeIcon icon={faTreeCity} />} className='mx-4 bg-white rounded shadow-lg' />
-                    <Card title={3} subtitle='Charts' icon={<FontAwesomeIcon icon={faChartArea} />} className='mx-4 bg-white rounded shadow-lg' />
+                    <Card title={2} subtitle='Charts' icon={<FontAwesomeIcon icon={faChartArea} />} className='mx-4 bg-white rounded shadow-lg' />
                 </div>
                 <div className='grid grid-cols-2 p-4 gap-4'>
                     <div className='col-span-2 bg-white border border-gray-300 rounded-lg shadow-lg drop-shadow-lg'>
