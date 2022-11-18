@@ -19,8 +19,6 @@ function BarChart({
   trees
 }: BarChartTypes) {
 
-  console.log(users)
-  console.log(trees)
   let tree1 = []
   let tree2 = []
   for (let i = 0; i < trees.length; i++) {
