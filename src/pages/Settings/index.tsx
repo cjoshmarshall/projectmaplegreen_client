@@ -22,8 +22,10 @@ function Settings() {
     }
 
     return (
-        <div className='flex justify-center'>
-            <Button children='Delete Account' onClick={handleSubmit} />
+        <div className='flex justify-center h-screen bg-gray-300'>
+            <div className='my-20'>
+                <Button children='Delete Account' onClick={handleSubmit} />
+            </div>
         </div>
     )
 }
