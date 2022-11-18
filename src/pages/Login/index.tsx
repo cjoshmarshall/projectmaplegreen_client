@@ -52,6 +52,7 @@ function Login() {
         } catch (err: any) {
             console.log(err)
             setIsLoading(false)
+            if (err.message === 'Network Error') return alert('Something went wrong. Try again later.')
             if (err.response.data === 'User not found') { setInputError({ email: 'Email is wrong', password: 'Password is wrong' }) }
             if (err.response.data === 'Password is wrong') { setInputError({ password: 'Password is wrong' }) }
         }
@@ -64,7 +65,7 @@ function Login() {
     return (
         <>
             {isLoading &&
-                <div className='absolute h-screen w-full bg-black bg-opacity-70'>
+                <div className='absolute h-screen w-full bg-black bg-opacity-70 z-50'>
                     <div className='flex m-auto h-screen w-full place-content-center'>
                         <div className='m-auto'>
                             <Loader isCenter isLoaderText={false} variant={1} isCol />
