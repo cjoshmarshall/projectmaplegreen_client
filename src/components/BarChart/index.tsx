@@ -19,18 +19,33 @@ function BarChart({
   trees
 }: BarChartTypes) {
 
+  console.log(users)
+  console.log(trees)
+  let tree1 = []
+  let tree2 = []
+  for (let i = 0; i < trees.length; i++) {
+    for (let j = 0; j < trees[i].length; j++) {
+      if (i % 2 === 0) {
+        tree1.push(trees[i][j].length)
+      } else {
+        tree2.push(trees[i][j].length)
+      }
+    }
+  }
+  console.log(tree1, tree2)
+
   const data: any = {
-    labels: ['Apple', 'Mango', 'Orange', 'Banana', 'Cashew'],
+    labels: ['Mango', 'Apple', 'Orange', 'Banana', 'Cashew'],
     datasets: [
       {
         label: users[0],
-        data: [1, 4, 7, 5, 2],
+        data: tree1,
         backgroundColor: [
           'rgba(255, 99, 132, 1)'
         ],
       }, {
         label: users[1],
-        data: [2, 3.8, 9, 5],
+        data: tree2,
         backgroundColor: [
           'rgba(54, 162, 235, 1)',
         ]
@@ -46,11 +61,15 @@ function BarChart({
         beginAtZero: true
       }
     },
-    legend: {
-      labels: {
-        fontSize: 26
-      }
-    }
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'Trees Planted By Each User',
+      },
+    },
   }
 
   return (
