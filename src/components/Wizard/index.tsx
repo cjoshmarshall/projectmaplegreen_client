@@ -150,7 +150,7 @@ function Wizard() {
                 socket.emit('importTree', {
                     userId: auth.user?._id
                 })
-                setTimeout(() => alert('Tree Uploaded Successfully'), 500)
+                setTimeout(() => alert('Tree Uploaded Successfully'), 100)
             } catch (err) {
                 console.log(err)
             }
@@ -189,7 +189,10 @@ function Wizard() {
                 })
                 setTimeout(() => (dispatch(TOGGLE_WIZARD()), progressbar * 100))
                 setIsProgessbar(false)
-                setTimeout(() => alert('Trees Uploaded Successfully'), 500)
+                socket.emit('importTree', {
+                    userId: auth.user?._id
+                })
+                setTimeout(() => alert('Trees Uploaded Successfully'), 100)
             } catch (err) {
                 console.log(err)
             }
