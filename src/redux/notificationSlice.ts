@@ -13,12 +13,12 @@ const notificationSlice = createSlice({
         SET_CREDENTIALS: (state, action: PayloadAction<any>) => {
             state.user.push(action.payload)
         },
-        RESET_STATE: (state, action: PayloadAction<any>) => {
-            state.user = null
+        RESET_NOTIFICATIONS: (state,) => {
+            state.user = []
         },
     },
 })
 
-export const { SET_CREDENTIALS, RESET_STATE } = notificationSlice.actions
+export const { SET_CREDENTIALS, RESET_NOTIFICATIONS } = notificationSlice.actions
 
 export default notificationSlice.reducer
