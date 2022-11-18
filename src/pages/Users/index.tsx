@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { SET_USERS } from '../../redux/userSlice'
 import { useDispatch } from 'react-redux'
+import { RESET_NOTIFICATIONS } from '../../redux/notificationSlice'
 
 function Users() {
 
@@ -105,6 +106,7 @@ function Users() {
       }
     }
     fetchUsers()
+    dispatch(RESET_NOTIFICATIONS())
   }, [])
 
   // const handleExport = () => {
@@ -125,7 +127,7 @@ function Users() {
           <div className='grid grid-flow-col'>
             <Card title={data.length} subtitle='Users' icon={<FontAwesomeIcon icon={faCircleUser} />} className='mx-4 bg-white rounded shadow-lg' />
             <Card title={trees.trees.length} subtitle='Trees' icon={<FontAwesomeIcon icon={faTree} />} className='mx-4 bg-white rounded shadow-lg' />
-            <Card title={3} subtitle='Charts' icon={<FontAwesomeIcon icon={faChartArea} />} className='mx-4 bg-white rounded shadow-lg' />
+            <Card title={2} subtitle='Charts' icon={<FontAwesomeIcon icon={faChartArea} />} className='mx-4 bg-white rounded shadow-lg' />
           </div>
           <div className='p-4'>
             {/* <div className='flex justify-between'>
