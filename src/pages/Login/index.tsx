@@ -52,9 +52,9 @@ function Login() {
         } catch (err: any) {
             console.log(err)
             setIsLoading(false)
-            if (err.message === 'Network Error') return alert('Something went wrong. Try again later.')
             if (err.response.data === 'User not found') { setInputError({ email: 'Email is wrong', password: 'Password is wrong' }) }
             if (err.response.data === 'Password is wrong') { setInputError({ password: 'Password is wrong' }) }
+            if (err.message === 'Network Error') return alert('Something went wrong. Try again later.')
         }
     }
 
