@@ -118,7 +118,7 @@ function Trees() {
             <div className='grid grid-flow-col'>
               <Card title={trees.trees.length} subtitle='Total Trees' icon={<FontAwesomeIcon icon={faTreeCity} />} className='mx-4 bg-white rounded shadow-lg' />
               <Card title={trees.trees.length} subtitle='Current User Trees' icon={<FontAwesomeIcon icon={faTree} />} className='mx-4 bg-white rounded shadow-lg' />
-              <Card title={3} subtitle='Charts' icon={<FontAwesomeIcon icon={faChartArea} />} className='mx-4 bg-white rounded shadow-lg' />
+              <Card title={2} subtitle='Charts' icon={<FontAwesomeIcon icon={faChartArea} />} className='mx-4 bg-white rounded shadow-lg' />
             </div> :
             <div className='w-1/2'>
               <Card title={data.length} subtitle='No. of Trees Present' icon={<FontAwesomeIcon icon={faTree} />} className='mx-4 bg-white rounded shadow-lg' />
